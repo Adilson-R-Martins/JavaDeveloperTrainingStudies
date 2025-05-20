@@ -4,9 +4,9 @@ public class ContaTerminal {
     public static void main(String[] args) {
 
         String nome;
-        int agencia = 0;
-        int conta = 0;
-        double saldo = 0;
+        int agencia;
+        int conta;
+        double saldo;
         String entrada;
 
         Scanner input = new Scanner(System.in);
@@ -15,27 +15,36 @@ public class ContaTerminal {
         nome = input.nextLine();
 
         System.out.println("Por favor, digite o número da sua Agência: ");
-        entrada = input.nextLine();
-        try {
-            agencia = Integer.parseInt(entrada);
-        } catch (NumberFormatException e) {
-            System.out.println("Por favor, digite apenas números.");
+        while (true) {
+            entrada = input.nextLine();
+            try {
+                agencia = Integer.parseInt(entrada);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Digite apenas números.\nInsira novamente o número da sua Agência:");
+            }
         }
 
         System.out.println("Por favor, digite o número da sua Conta: ");
-        entrada = input.nextLine();
-        try {
-            conta = Integer.parseInt(entrada);
-        } catch (NumberFormatException e) {
-            System.out.println("Por favor, digite apenas números.");
+        while (true) {
+            entrada = input.nextLine();
+            try {
+                conta = Integer.parseInt(entrada);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Digite apenas números.\nInsira novamente o número da sua Conta:");
+            }
         }
 
         System.out.println("Por favor, digite o seu Saldo: ");
-        entrada = input.nextLine();
-        try {
-            saldo = Double.parseDouble(entrada);
-        } catch (NumberFormatException e) {
-            System.out.println("Por favor, digite apenas números.");
+        while (true) {
+            entrada = input.nextLine();
+            try {
+                saldo = Double.parseDouble(entrada);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Digite apenas números.\nInsira novamente o seu Saldo:");
+            }
         }
 
         input.close();
